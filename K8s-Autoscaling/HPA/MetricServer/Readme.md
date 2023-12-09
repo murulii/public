@@ -1,6 +1,0 @@
-# Steps
-
-```
-kubectl apply -f
-
-```
