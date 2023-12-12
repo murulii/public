@@ -1,5 +1,6 @@
 
 ```
+
 kubectl apply -f https://github.com/murulii/public/K8s-Autoscaling/HPA/MetricServer .
 
 kubectl apply -f https://github.com/murulii/public/K8s-Autoscaling/VPA/dep.yml
