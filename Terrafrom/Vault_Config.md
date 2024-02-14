@@ -66,6 +66,8 @@ capabilities = ["create", "read", "update", "list"]
 EOF
 ```
 
+
+if you get https error apply this `export VAULT_ADDR='http://127.0.0.1:8200'`
 Now you'll need to create an AppRole with appropriate policies and configure its authentication settings. Here are the steps to create an AppRole:
 
 **a. Create the AppRole**: (this will genrate keys and gives expriration time)
