@@ -36,3 +36,34 @@ sudo systemctl enable etcd
 sudo systemctl start etcd
 
 
+etcdctl \
+  --cacert=/var/lib/etcd/ca.pem \
+  --cert=/var/lib/etcd/etcd.pem \
+  --key=/var/lib/etcd/etcd-key.pem \
+  endpoint health \
+  -w=table \
+  --cluster
+
+etcdctl \
+  --cacert=/var/lib/etcd/ca.pem \
+  --cert=/var/lib/etcd/etcd.pem \
+  --key=/var/lib/etcd/etcd-key.pem \
+  endpoint status \
+  -w=table \
+  --cluster
+
+etcdctl \
+  --cacert=/var/lib/etcd/ca.pem \
+  --cert=/var/lib/etcd/etcd.pem \
+  --key=/var/lib/etcd/etcd-key.pem \
+  member list \
+  -w=table
+
+etcdctl \
+  --cacert=/var/lib/etcd/ca.pem \
+  --cert=/var/lib/etcd/etcd.pem \
+  --key=/var/lib/etcd/etcd-key.pem \
+  get / --prefix --keys-only
+
+
+
