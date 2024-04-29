@@ -13,7 +13,7 @@ ExecStart=/usr/local/bin/etcd \\
   --listen-client-urls https://${current-vm-private-ip}:2379,https://127.0.0.1:2379 \\
   --advertise-client-urls https://${current-vm-private-ip}:2379 \\
   --initial-cluster-token etcd-cluster-1 \\
-  --initial-cluster infra0=https://${current-vm-private-ip}:2380,infra1=https://${other-vms-private-ip}:2380,infra2=https://${other-vms-private-ip}:2380 \\
+  --initial-cluster infra0=https://${current-vm-private-ip}:2380,infra1=https://${other-vms-private-ip-1}:2380,infra2=https://${other-vms-private-ip-2}:2380 \\
   --log-outputs=/var/lib/etcd/etcd.log \\
   --initial-cluster-state new \\
   --peer-auto-tls \\
