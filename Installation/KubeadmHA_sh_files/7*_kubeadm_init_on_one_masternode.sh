@@ -23,7 +23,7 @@ kind: ClusterConfiguration
 apiServer:
   timeoutForControlPlane: 4m0s
   certSANs:
-    - "${public ip of loadbalancer}" # <pub ip of lb>
+    - "${LoadBalancerIP}" # <pub ip of lb>
     - "127.0.0.1"
 certificatesDir: /etc/kubernetes/pki
 clusterName: kubernetes
@@ -32,15 +32,15 @@ dns: {}
 etcd:
   external:
     endpoints:
-    - "https://${private ip of the etcd 0}:2379"
-    - "https://${private ip of the etcd 1}:2379"
-    - "https://${private ip of the etcd 2}:2379"
+    - "https://${etcd-0}:2379"
+    - "https://${etcd-1}:2379"
+    - "https://${etcd-2}:2379"
     caFile: "/etcd/kubernetes/pki/etcd/ca.pem"
     certFile: "/etcd/kubernetes/pki/etcd/etcd.pem"
     keyFile: "/etcd/kubernetes/pki/etcd/etcd-key.pem"
 imageRepository: registry.k8s.io
 kubernetesVersion: 1.28.0
-controlPlaneEndpoint: "${public ip of loadbalancer}:6443"
+controlPlaneEndpoint: "${LoadBalancerIP}:6443"
 networking:
   dnsDomain: cluster.local
   serviceSubnet: 10.96.0.0/12
