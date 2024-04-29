@@ -47,3 +47,5 @@ EOF
 
 sudo mv haproxy.cfg /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
+haproxy -f /etc/haproxy/haproxy.cfg -c
+
