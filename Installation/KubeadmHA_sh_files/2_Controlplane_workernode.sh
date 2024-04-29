@@ -67,3 +67,5 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo systemctl enable kubelet
+mkdir -vp /etcd/kubernetes/pki/etcd/
+
