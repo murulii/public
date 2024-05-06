@@ -3,6 +3,7 @@
 1) Create s3 bucket
 2) install kops
 3) install aws cli and configure it
+4) Install Kubectl
  
 
 ```
