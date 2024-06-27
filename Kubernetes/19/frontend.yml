@@ -1,4 +1,4 @@
-````
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -34,4 +34,4 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 5000
-            ````
+        
