@@ -16,16 +16,40 @@ spec:
       containers:
         - name: register-app
           image: murulii/register-app-pipeline:1.0-18
-          
           env:
             - name: MYSQL_HOST
-              value: "mysql-service"          # this is your mysql's service clusture IP, Make sure to change it with yours
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: url
             - name: MYSQL_PASSWORD
-              value: "root"
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: password
             - name: MYSQL_USER
-              value: "root"
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: username
             - name: MYSQL_DB
-              value: "default_db"
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db          
+          
+          
+          #env:
+          #  - name: MYSQL_HOST
+          #    value: "mysql-service"          # this is your mysql's service clusture IP, Make sure to change it with yours
+          #  - name: MYSQL_PASSWORD
+          #    value: "root"
+          #  - name: MYSQL_USER
+           #   value: "root"
+           # - name: MYSQL_DB
+           #   value: "default_db"
+
+
 
           
           resources:
