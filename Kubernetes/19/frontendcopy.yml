@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: register-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register-app
+  template:
+    metadata:
+      labels:
+        app: register-app
+    spec:
+      containers:
+        - name: register-app
+          image: murulii/tomcat
+          env:
+            - name: MYSQL_HOST
+              value: "/opt/secrets/url"
+            - name: MYSQL_PASSWORD
+              value: "/opt/secrets/password"
+            - name: MYSQL_USER
+              value: "/opt/secrets/username"
+            - name: MYSQL_DB
+              value: "/opt/secrets/db"
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /opt/secrets
+              readOnly: true
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5000
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: my-secret
