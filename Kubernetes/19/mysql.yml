@@ -18,6 +18,12 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: root
+        env:
+        - name: SECRET_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: backend-user
+              key: backend-username
           
         ports:
         - containerPort: 3306
