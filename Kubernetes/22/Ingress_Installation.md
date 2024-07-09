@@ -1,16 +1,16 @@
 ************Install IngressController Setup*************
-
+```
 helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace
-
+```
 or
-
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml ```
 ## To acess application using masterIP:nodeport enable/edit svc Loadbalancer to Nodeport
 ------*******************************************************-------
 
 
 *************Ingress Resource******************
-
+```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -28,7 +28,7 @@ spec:
                 name: nginx-service  # Replace with the name of your Service or Deployment.
                 port:
                   number: 80  # Replace with the port of your Service.
-
+```
 ------******************************************************************************************---------------
 
 *****************To acess application using ingress************************************************************
