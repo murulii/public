@@ -10,6 +10,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+
+
   - host: pro.muruli1.shop
     http:
       paths:
