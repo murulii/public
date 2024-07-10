@@ -1,6 +1,6 @@
 ************Install IngressController Setup*************
 ```
-helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace
+helm install my-release oci://ghcr.io/nginxinc/charts/nginx-ingress --version 1.3.1
 ```
 or
 ```
