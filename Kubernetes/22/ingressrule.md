@@ -10,56 +10,43 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: project1.example.com
+  - host: pro.muruli1.shop
     http:
       paths:
-      - path: /app1
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: project1-app1-service
+            name: pro-service
             port:
               number: 80
-      - path: /app2
-        pathType: Prefix
-        backend:
-          service:
-            name: project1-app2-service
-            port:
-              number: 80
-  - host: project2.example.com
+
+
+      
+  - host: pro1.muruli1.shop
     http:
       paths:
-      - path: /app1
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: project2-app1-service
+            name: pro1-service
             port:
               number: 80
-      - path: /app2
-        pathType: Prefix
-        backend:
-          service:
-            name: project2-app2-service
-            port:
-              number: 80
-  - host: project3.example.com
+
+
+
+      
+  - host: pro2.muruli1.shop
     http:
       paths:
-      - path: /app1
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: project3-app1-service
+            name: pro2-service
             port:
               number: 80
-      - path: /app2
-        pathType: Prefix
-        backend:
-          service:
-            name: project3-app2-service
-            port:
-              number: 80
+      
 
 ```
